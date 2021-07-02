@@ -38,17 +38,21 @@
                                  @change="$emit('change')">
               </widget-form-group>
             </div>
+            <!-- <el-col >
+                 <widget-form-item :item="column"
+                                  :params="column.params"></widget-form-item>
+            </el-col> -->
             <el-col v-else
                     :key="index"
                     :md="column.span || 12"
                     :xs="24"
                     :offset="column.offset || 0">
-              <el-form-item class="widget-form-item"
+              <!-- <el-form-item class="widget-form-item"
                             :label="column.label"
                             :labelWidth="column.labelWidth"
                             :prop="column.prop"
                             :class="{ active: selectWidget.prop == column.prop, 'required': column.required }"
-                            @click.native="handleSelectWidget(index)">
+                            @click.native="handleSelectWidget(index)"> -->
                 <widget-form-item :item="column"
                                   :params="column.params"></widget-form-item>
                 <el-button title="删除"
@@ -71,7 +75,7 @@
                            type="primary">
                   <i class="iconfont icon-copy"></i>
                 </el-button>
-              </el-form-item>
+              <!-- </el-form-item> -->
             </el-col>
           </template>
         </draggable>

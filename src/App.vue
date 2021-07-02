@@ -3,7 +3,6 @@
     <avue-form-design style="height: 100vh;"
                       :options="options"
                       @submit="handleSubmit"
-                      :custom-fields="customFields"
                       :default-values="defaultValues"></avue-form-design>
   </div>
 </template>

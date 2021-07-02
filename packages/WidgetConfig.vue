@@ -196,7 +196,8 @@
 </template>
 
 <script>
-import fields from './fieldsConfig.js'
+// import fields from './fieldsConfig.js'
+import fields from './mobileConfig'
 
 const dateArr = [
   'year', 'month', 'week', 'date', 'datetime', 'time', 'daterange', 'timerange', 'datetimerange', 'dates'

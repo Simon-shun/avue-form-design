@@ -147,9 +147,11 @@
             <slot name="toolbar"></slot>
           </div>
         </el-header>
-        <el-main :style="{background: widgetForm.column.length == 0 ? `url(${widgetEmpty}) no-repeat 50%`: ''}">
+        <el-main :style="{background: widgetForm.column.length == 0 ? `url(${widgetEmpty}) no-repeat 50%`: ''}"
+                  class="main-content" >
           <widget-form ref="widgetForm"
                        :data="widgetForm"
+                       class="main-mobile"
                        :select.sync="widgetFormSelect"
                        @change="handleHistoryChange(widgetForm)"></widget-form>
         </el-main>
@@ -288,7 +290,8 @@
 </template>
 
 <script>
-import fields from './fieldsConfig.js'
+// import fields from './fieldsConfig.js'
+import fields from './mobileConfig'
 import beautifier from './utils/json-beautifier'
 import MonacoEditor from './utils/monaco-editor'
 import widgetEmpty from './assets/widget-empty.png'
@@ -774,4 +777,14 @@ export default {
 
 <style lang="scss">
 @import './styles/index.scss';
+
+.main-content{
+  background: #ccc;
+  .main-mobile{
+    background-color: #fff;
+    width: 375px;
+    margin: 0px auto;
+  }
+}
+
 </style>
