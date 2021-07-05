@@ -38,44 +38,45 @@
                                  @change="$emit('change')">
               </widget-form-group>
             </div>
-            <!-- <el-col >
-                 <widget-form-item :item="column"
-                                  :params="column.params"></widget-form-item>
-            </el-col> -->
+
             <el-col v-else
                     :key="index"
                     :md="column.span || 12"
                     :xs="24"
-                    :offset="column.offset || 0">
-              <!-- <el-form-item class="widget-form-item"
-                            :label="column.label"
-                            :labelWidth="column.labelWidth"
+                    :offset="column.offset || 0"
+ 
+                    >
+              <el-form-item class="widget-form-item"
+                            labelWidth="0"
                             :prop="column.prop"
                             :class="{ active: selectWidget.prop == column.prop, 'required': column.required }"
-                            @click.native="handleSelectWidget(index)"> -->
-                <widget-form-item :item="column"
-                                  :params="column.params"></widget-form-item>
-                <el-button title="删除"
-                           @click.stop="handleWidgetDelete(index)"
-                           class="widget-action-delete"
-                           v-if="selectWidget.prop == column.prop"
-                           circle
-                           plain
-                           size="small"
-                           type="danger">
-                  <i class="iconfont icon-delete"></i>
-                </el-button>
-                <el-button title="复制"
-                           @click.stop="handleWidgetClone(index)"
-                           class="widget-action-clone"
-                           v-if="selectWidget.prop == column.prop"
-                           circle
-                           plain
-                           size="small"
-                           type="primary">
-                  <i class="iconfont icon-copy"></i>
-                </el-button>
-              <!-- </el-form-item> -->
+                            @click.native="handleSelectWidget(index)">
+                        <widget-form-item :item="column"
+                                          :params="column.params"></widget-form-item>
+
+                        <el-button title="删除"
+                                  @click.stop="handleWidgetDelete(index)"
+                                  class="widget-action-delete"
+                                  v-if="selectWidget.prop == column.prop"
+                                  circle
+                                  plain
+                                  size="small"
+                                  type="danger">
+                          <i class="iconfont icon-delete"></i>
+                        </el-button>
+                        <el-button title="复制"
+                                  @click.stop="handleWidgetClone(index)"
+                                  class="widget-action-clone"
+                                  v-if="selectWidget.prop == column.prop"
+                                  circle
+                                  plain
+                                  size="small"
+                                  type="primary">
+                          <i class="iconfont icon-copy"></i>
+                        </el-button>
+
+              
+              </el-form-item>
             </el-col>
           </template>
         </draggable>

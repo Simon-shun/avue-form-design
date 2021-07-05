@@ -612,6 +612,7 @@ body {
   right: 0;
   padding: 20px;
   display: flex;
+  background-color: #fff;
 
   button {
     width: 50%;
@@ -628,7 +629,7 @@ body {
 
 .preview-form {
   overflow-y: scroll;
-  height: 83vh;
+  // height: 83vh;
 }
 
 .popper-bo {
@@ -640,5 +641,19 @@ body {
 .el-drawer__wrapper {
   :focus {
     outline: 0;
+  }
+}
+.preview-content{
+  background-color: #eee;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .preview-iframe{
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); 
+
   }
 }

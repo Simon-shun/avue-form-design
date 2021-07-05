@@ -270,12 +270,18 @@
                  size="60%"
                  append-to-body
                  :before-close="handleBeforeClose">
-        <avue-form v-if="previewVisible"
-                   ref="form"
-                   class="preview-form"
-                   :option="widgetFormPreview"
-                   v-model="widgetModels"
-                   @submit="handlePreviewSubmit"></avue-form>
+        <div class="preview-content">
+              <iframe src="/#/preview"
+                    frameborder="0"
+                    scrolling="0"
+                    width="375"
+                    height="700"
+                    style="margin-left: 10px;"
+                    class="preview-iframe"
+                    >
+                </iframe>
+        </div>
+    
         <div class="drawer-foot">
           <el-button size="medium"
                      type="primary"
@@ -508,6 +514,9 @@ export default {
         this.transformToAvueOptions(this.widgetForm).then(data => {
           this.widgetFormPreview = data
           this.previewVisible = true
+          // localStorage.getItem("avue-form-data")
+          localStorage.setItem("avue-form-data", beautifier(data))
+          console.log("data",beautifier(data));
         })
       }
     },
@@ -575,7 +584,7 @@ export default {
     },
     // 预览 - 弹窗 - 关闭前
     handleBeforeClose() {
-      this.$refs.form.resetForm()
+      // this.$refs.form.resetForm()
       this.widgetModels = {}
       this.previewVisible = false
     },
@@ -779,11 +788,12 @@ export default {
 @import './styles/index.scss';
 
 .main-content{
-  background: #ccc;
+  background: #eee;
   .main-mobile{
     background-color: #fff;
     width: 375px;
-    margin: 0px auto;
+    height: calc(100% - 20px);
+    margin: 10px auto;
   }
 }
 

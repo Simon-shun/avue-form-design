@@ -1,12 +1,15 @@
 <template>
-  <div id="app">
-    <router-view/> 
+  <div>    
+    <avue-form-design style="height: 100vh;"
+                      :options="options"
+                      @submit="handleSubmit"
+                      :default-values="defaultValues"></avue-form-design>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
+  name: 'form',
   data() {
     return {
       customFields: [{
