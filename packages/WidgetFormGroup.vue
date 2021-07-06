@@ -12,25 +12,14 @@
                @add="handleWidgetGroupAdd($event, column)"
                @end="$emit('change')">
       <template v-for="(item, groupIndex) in column.children.column">
-        <div class="widget-form-table"
-             v-if="item.type == 'dynamic'"
-             :key="groupIndex"
-             :class="{ active: selectWidget.prop == item.prop }"
-             @click.stop="handleWidgetTableSelect(item)">
-          <widget-form-table :data="column.children"
-                             :column="item"
-                             :index="groupIndex"
-                             :select.sync="selectWidget"
-                             @change="$emit('change')"></widget-form-table>
-        </div>
-        <el-col v-else
+        <el-col 
                 :key="groupIndex"
-                :md="item.span || 12"
+                :md="item.span"
                 :xs="24"
                 :offset="item.offset || 0">
           <el-form-item class="widget-form-group__item"
-                        :label="item.label"
                         :prop="item.prop"
+                        labelWidth="0"
                         :class="{ active: selectWidget.prop == item.prop, 'required': item.required }"
                         @click.native.stop="handleWidgetTableSelect(item)">
             <widget-form-item :item="item"
@@ -91,13 +80,13 @@
 </template>
 <script>
 import WidgetFormItem from './WidgetFormItem'
-import WidgetFormTable from './WidgetFormTable'
+// import WidgetFormTable from './WidgetFormTable'
 import draggable from 'vuedraggable'
 
 export default {
   name: 'widget-form-group',
   props: ['data', 'column', 'select', 'index'],
-  components: { WidgetFormItem, WidgetFormTable, draggable },
+  components: { WidgetFormItem, draggable },
   data () {
     return {
       selectWidget: this.select,
@@ -172,7 +161,7 @@ export default {
       if (!data.prop) data.prop = Date.now() + '_' + Math.ceil(Math.random() * 99999)
       delete data.icon
       if (data.type == 'dynamic') data.span = 24
-      else data.span = 12
+      else data.span = 24
       this.$set(column.children.column, newIndex, { ...data })
       this.selectWidget = column.children.column[newIndex]
 

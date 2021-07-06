@@ -33,13 +33,13 @@ export default {
             done()
             })
         } else {
-            this.$refs.form.validate((valid, done) => {
-            if (valid) this.$alert(this.widgetModels).then(() => {
-                done()
-            }).catch(() => {
-                done()
-            })
-            })
+            // this.$refs.form.validate((valid, done) => {
+            // if (valid) this.$alert(this.widgetModels).then(() => {
+            //     done()
+            // }).catch(() => {
+            //     done()
+            // })
+            // })
         }
         },
     }

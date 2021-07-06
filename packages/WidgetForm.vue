@@ -15,19 +15,9 @@
                    @add="handleWidgetAdd"
                    @end="$emit('change')">
           <template v-for="(column, index) in data.column">
-            <div class="widget-form-table"
-                 v-if="column.type == 'dynamic'"
-                 :key="index"
-                 :class="{ active: selectWidget.prop == column.prop }"
-                 @click="handleSelectWidget(index)">
-              <widget-form-table :data="data"
-                                 :column="column"
-                                 :index="index"
-                                 :select.sync="selectWidget"
-                                 @change="$emit('change')"></widget-form-table>
-            </div>
+      
             <div class="widget-form-group"
-                 v-else-if="column.type == 'group'"
+                 v-if="column.type == 'group'"
                  :key="index"
                  :class="{ active: selectWidget.prop == column.prop }"
                  @click="handleSelectWidget(index)">
@@ -44,7 +34,6 @@
                     :md="column.span || 12"
                     :xs="24"
                     :offset="column.offset || 0"
- 
                     >
               <el-form-item class="widget-form-item"
                             labelWidth="0"
@@ -74,8 +63,6 @@
                                   type="primary">
                           <i class="iconfont icon-copy"></i>
                         </el-button>
-
-              
               </el-form-item>
             </el-col>
           </template>
@@ -87,13 +74,13 @@
 
 <script>
 import WidgetFormItem from './WidgetFormItem'
-import WidgetFormTable from './WidgetFormTable'
+// import WidgetFormTable from './WidgetFormTable'
 import WidgetFormGroup from './WidgetFormGroup'
 import Draggable from 'vuedraggable'
 
 export default {
   name: 'widget-form',
-  components: { Draggable, WidgetFormItem, WidgetFormTable, WidgetFormGroup },
+  components: { Draggable, WidgetFormItem, WidgetFormGroup },
   props: ['data', 'select'],
   data () {
     return {
@@ -117,7 +104,6 @@ export default {
       }
       this.$set(this.data.column, newIndex, data)
       this.handleSelectWidget(newIndex)
-
       this.$emit("change")
     },
     handleWidgetDelete (index) {

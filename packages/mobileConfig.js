@@ -3,27 +3,16 @@ export default [
       title: '布局字段',
       list: [{
         type: 'group',
-        label: '分组',
+        label: '选项卡',
         icon: 'icon-group',
+        span: 24,
         display: true,
-        arrow: false,
+        arrow: true,
         collapse: true,
         children:{
           column: []
         }
-      } ,{
-        type: 'title',
-        icon: 'icon-title',
-        span: 24,
-        display: true,
-        styles: {
-            fontSize: '18px',
-            color: '#000'
-        },
-        label: '标题',
-        labelWidth: '0px',
-        value: '标题',
-        }]
+      }]
     },
     {
       title: '输入字段',

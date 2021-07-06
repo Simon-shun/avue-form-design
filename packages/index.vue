@@ -147,8 +147,7 @@
             <slot name="toolbar"></slot>
           </div>
         </el-header>
-        <el-main :style="{background: widgetForm.column.length == 0 ? `url(${widgetEmpty}) no-repeat 50%`: ''}"
-                  class="main-content" >
+        <el-main :style="{background: widgetForm.column.length == 0 ? `url(${widgetEmpty}) no-repeat 50%`: ''}" >
           <widget-form ref="widgetForm"
                        :data="widgetForm"
                        class="main-mobile"
@@ -281,7 +280,6 @@
                     >
                 </iframe>
         </div>
-    
         <div class="drawer-foot">
           <el-button size="medium"
                      type="primary"
@@ -381,6 +379,7 @@ export default {
         }
         this.transAvueOptionsToFormDesigner(options).then(res => {
           this.widgetForm = { ...this.widgetForm, ...res }
+          console.log('widgetForm',this.widgetForm);
         })
       },
       deep: true
@@ -504,7 +503,6 @@ export default {
         this.widgetForm.column.splice(activeIndex, 0, item)
         newIndex = activeIndex
       }
-
       this.$refs.widgetForm.handleWidgetAdd({ newIndex })
     },
     // 预览 - 弹窗
@@ -787,14 +785,13 @@ export default {
 <style lang="scss">
 @import './styles/index.scss';
 
-.main-content{
-  background: #eee;
-  .main-mobile{
-    background-color: #fff;
-    width: 375px;
-    height: calc(100% - 20px);
-    margin: 10px auto;
-  }
+.main-mobile{
+  width: 375px;
+  height: calc(100% - 30px) !important;
+  margin: 15px auto;
+  border-radius: 12px;
+  -webkit-box-shadow: #e0e1e4 0 4px 12px;
+  box-shadow: 0 4px 12px #e0e1e4;
 }
 
 </style>
