@@ -99,7 +99,7 @@
       <el-switch v-model="data.dicFlag"></el-switch>
     </el-form-item>
     <template v-if="data.type == 'select'">
-      <el-form-item label="是否多选">
+      <!-- <el-form-item label="是否多选">
         <el-switch v-model="data.multiple"></el-switch>
       </el-form-item>
       <el-form-item label="是否可拖拽"
@@ -120,7 +120,7 @@
                          placeholder="多选限制"
                          :min="0"
                          :max="data.dicData.length"></el-input-number>
-      </el-form-item>
+      </el-form-item> -->
       <div class="el-form-item el-form-item--small el-form--label-top">
         <label class="el-form-item__label"
                style="padding: 0;">级联配置：</label>
@@ -172,16 +172,19 @@
       </el-form-item>
     </template>
     <template v-if="['radio','checkbox'].includes(data.type)">
-      <el-form-item label="边框"
+      <!-- <el-form-item label="边框"
                     v-if="!data.button">
         <el-switch v-model="data.border"></el-switch>
       </el-form-item>
       <el-form-item label="按钮"
                     v-if="!data.border">
         <el-switch v-model="data.button"></el-switch>
+      </el-form-item> -->
+       <el-form-item label="标签">
+        <el-switch v-model="data.tags"></el-switch>
       </el-form-item>
     </template>
-    <el-form-item label="尺寸"
+    <!-- <el-form-item label="尺寸"
                   v-if="data.border || data.button">
       <el-radio-group v-model="data.size"
                       size="mini">
@@ -189,12 +192,9 @@
         <el-radio-button label="small">小</el-radio-button>
         <el-radio-button label="mini">超小</el-radio-button>
       </el-radio-group>
-    </el-form-item>
+    </el-form-item> -->
     <el-form-item label="是否禁用">
       <el-switch v-model="data.disabled"></el-switch>
-    </el-form-item>
-    <el-form-item label="是否可见">
-      <el-switch v-model="data.display"></el-switch>
     </el-form-item>
     <el-form-item label="是否必填">
       <el-switch v-model="data.required"></el-switch>

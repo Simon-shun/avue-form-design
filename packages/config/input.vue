@@ -31,9 +31,6 @@
     <el-form-item label="是否只读">
       <el-switch v-model="data.readonly"></el-switch>
     </el-form-item>
-    <!-- <el-form-item label="是否可见">
-      <el-switch v-model="data.display"></el-switch>
-    </el-form-item> -->
     <el-form-item label="是否必填">
       <el-switch v-model="data.required"></el-switch>
       <el-input v-if="data.required"

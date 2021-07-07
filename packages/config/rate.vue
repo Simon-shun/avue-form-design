@@ -36,7 +36,7 @@
     </el-form-item>
     <el-form-item label="自定义颜色"
                   label-width="110px">
-      <el-tag :key="index"
+      <!-- <el-tag :key="index"
               v-for="(tag,index) in data.colors"
               closable
               size="small"
@@ -46,7 +46,10 @@
       <el-color-picker v-model="colorValue"
                        size="mini"
                        @change="handleColorConfirm"
-                       class="color-picker"></el-color-picker>
+                       class="color-picker"></el-color-picker> -->
+      <el-color-picker v-model="data.color"
+                       size="mini"
+                       class="color-picker"></el-color-picker> 
     </el-form-item>
     <!--    <el-form-item label="自定义图标">-->
     <!--      <el-tag :key="index" v-for="(tag,index) in data.iconClasses" closable @close="handleIconClose(tag)">{{tag}}-->
@@ -64,9 +67,6 @@
     <!--    </el-form-item>-->
     <el-form-item label="是否禁用">
       <el-switch v-model="data.disabled"></el-switch>
-    </el-form-item>
-    <el-form-item label="是否可见">
-      <el-switch v-model="data.display"></el-switch>
     </el-form-item>
     <el-form-item label="是否必填">
       <el-switch v-model="data.required"></el-switch>
@@ -120,8 +120,8 @@ export default {
       this.data.colors.splice(this.data.colors.indexOf(tag), 1);
     },
     handleColorConfirm() {
-      if (this.colorValue) this.data.colors.push(this.colorValue);
-      this.colorValue = '';
+      // if (this.colorValue) this.data.colors.push(this.colorValue);
+      // this.colorValue = '';
     },
     // handleIconClose(tag) {
     //   this.data.iconClasses.splice(this.data.iconClasses.indexOf(tag), 1);

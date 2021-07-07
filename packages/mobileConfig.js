@@ -45,6 +45,7 @@ export default [
         type: 'radio',
         label: '单选框组',
         icon: 'icon-radio',
+        tags: true,
         dicData: [
           { label: '选项一', value: '0' },
           { label: '选项二', value: '1' },
@@ -60,7 +61,7 @@ export default [
         type: 'checkbox',
         label: '多选框组',
         icon: 'icon-checkbox',
-        // tags: true,
+        tags: true,
         dicData: [
           { label: '选项一', value: '0' },
           { label: '选项二', value: '1' },
@@ -150,7 +151,7 @@ export default [
         max: 5,
         value: 0,
         texts: ['极差', '失望', '一般', '满意', '惊喜'],
-        colors: ['#99A9BF', '#F7BA2A', '#FF9900'],
+        color: '#ee0a24',
       }, {
         type: 'slider',
         label: '滑块',
