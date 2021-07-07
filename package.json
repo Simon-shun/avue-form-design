@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "monaco-editor": "^0.22.3",
+    "qrcodejs2": "0.0.2",
     "vue-router": "^3.5.2",
     "vuedraggable": "^2.24.3"
   },

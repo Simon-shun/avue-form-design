@@ -269,7 +269,8 @@
                  size="60%"
                  append-to-body
                  :before-close="handleBeforeClose">
-        <div class="preview-content">
+
+        <div v-if="previewVisible" class="preview-content">
               <iframe src="/#/preview"
                     frameborder="0"
                     scrolling="0"
@@ -279,6 +280,11 @@
                     class="preview-iframe"
                     >
                 </iframe>
+                <div class="phone-qrcode">
+                  <div id="qrCode" class="qrcode" ref="qrCodeDiv"></div>
+                  <div class="qrcode-title">手机扫码预览</div>
+                </div>
+
         </div>
         <div class="drawer-foot">
           <el-button size="medium"
@@ -302,7 +308,7 @@ import widgetEmpty from './assets/widget-empty.png'
 import history from './mixins/history'
 
 import Draggable from 'vuedraggable'
-
+import QRCode from 'qrcodejs2';
 import WidgetForm from './WidgetForm'
 import FormConfig from './FormConfig'
 import WidgetConfig from './WidgetConfig'
@@ -444,6 +450,19 @@ export default {
     this.handleLoadCss()
   },
   methods: {
+      bindQRCode: function () {
+      let x=window.location.href;
+      let hostnum=x.split('/')[2];
+      new QRCode(this.$refs.qrCodeDiv, {
+        text: `${hostnum}/#/preview`,
+        width: 100,
+        height: 100,
+        colorDark: "#666", //二维码颜色
+        colorLight: "#ffffff", //二维码背景色
+        correctLevel: QRCode.CorrectLevel.L//容错率，L/M/H
+      })
+    },
+
     // 组件初始化时加载本地存储中的options(需开启storage),若不存在则读取用户配置的options
     async handleLoadStorage() {
       let options = this.options
@@ -514,6 +533,9 @@ export default {
           this.previewVisible = true
           localStorage.setItem("avue-form-data", beautifier(data))
           // console.log("data",beautifier(data));
+           this.$nextTick(function () {
+            this.bindQRCode();
+          })
         })
       }
     },
@@ -791,6 +813,8 @@ export default {
   border-radius: 12px;
   -webkit-box-shadow: #e0e1e4 0 4px 12px;
   box-shadow: 0 4px 12px #e0e1e4;
+  z-index: 10;
 }
+
 
 </style>

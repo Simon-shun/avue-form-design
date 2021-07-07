@@ -662,4 +662,14 @@ body {
     min-width: 256px;
 
   }
+  .phone-qrcode{
+    position: absolute;
+    top: 60%;
+    right: 4%;
+    transform: translateX(-50%); 
+    .qrcode-title{
+      margin-top: 5px;
+      color: #666;
+    }
+  }
 }
