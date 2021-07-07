@@ -7,14 +7,14 @@
                 clearable
                 placeholder="占位内容"></el-input>
     </el-form-item>
-    <el-form-item label="最大长度">
+    <!-- <el-form-item label="最大长度">
       <el-input-number v-model="data.maxlength"
                        controls-position="right"
                        placeholder="最大长度"></el-input-number>
     </el-form-item>
     <el-form-item label="显示计数">
       <el-switch v-model="data.showWordLimit"></el-switch>
-    </el-form-item>
+    </el-form-item> -->
     <el-form-item label="最小行">
       <el-input-number v-model="data.minRows"
                        controls-position="right"
@@ -29,9 +29,6 @@
     </el-form-item>
     <el-form-item label="是否只读">
       <el-switch v-model="data.readonly"></el-switch>
-    </el-form-item>
-    <el-form-item label="是否可见">
-      <el-switch v-model="data.display"></el-switch>
     </el-form-item>
     <el-form-item label="是否必填">
       <el-switch v-model="data.required"></el-switch>

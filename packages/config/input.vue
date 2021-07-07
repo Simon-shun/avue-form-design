@@ -5,35 +5,35 @@
                 clearable
                 placeholder="占位内容"></el-input>
     </el-form-item>
-    <el-form-item label="前缀">
-      <el-input v-model="data.prepend"
+    <el-form-item label="前缀图标">
+      <el-input v-model="data.prefixIcon"
                 clearable
-                placeholder="前缀"></el-input>
+                placeholder="前缀图标"></el-input>
     </el-form-item>
-    <el-form-item label="后缀">
-      <el-input v-model="data.append"
+    <el-form-item label="后缀图标">
+      <el-input v-model="data.suffixIcon"
                 clearable
-                placeholder="后缀"></el-input>
+                placeholder="后缀图标"></el-input>
     </el-form-item>
-    <el-form-item label="最大长度">
+    <!-- <el-form-item label="最大长度">
       <el-input-number v-model="data.maxlength"
                        controls-position="right"
                        placeholder="最大长度"></el-input-number>
-    </el-form-item>
-    <el-form-item label="显示计数"
+    </el-form-item> -->
+    <!-- <el-form-item label="显示计数"
                   v-if="data.type != 'password'">
       <el-switch v-model="data.showWordLimit"></el-switch>
-    </el-form-item>
-    <el-form-item label="显示密码"
+    </el-form-item> -->
+    <!-- <el-form-item label="显示密码"
                   v-if="data.type == 'password'">
       <el-switch v-model="data.showPassword"></el-switch>
-    </el-form-item>
+    </el-form-item> -->
     <el-form-item label="是否只读">
       <el-switch v-model="data.readonly"></el-switch>
     </el-form-item>
-    <el-form-item label="是否可见">
+    <!-- <el-form-item label="是否可见">
       <el-switch v-model="data.display"></el-switch>
-    </el-form-item>
+    </el-form-item> -->
     <el-form-item label="是否必填">
       <el-switch v-model="data.required"></el-switch>
       <el-input v-if="data.required"

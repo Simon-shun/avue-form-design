@@ -43,7 +43,7 @@
                              placeholder="宽度"
                              :min="100"></el-input-number>
           </el-form-item>
-          <el-form-item label="表单栅格"
+          <!-- <el-form-item label="表单栅格"
                         v-if="!data.subfield && !['group'].includes(data.type)">
             <el-input-number style="width:100%;"
                              v-model="data.span"
@@ -51,7 +51,7 @@
                              placeholder="表单栅格"
                              :min="8"
                              :max="24"></el-input-number>
-          </el-form-item>
+          </el-form-item> -->
           <el-form-item label="数据类型"
                         v-if="['cascader','checkbox','radio','select','tree','upload','img','array','slider','timerange','daterange','datetimerange'].includes(data.type)">
             <template slot="label">
@@ -96,7 +96,7 @@
                      :data="data"
                      :default-values="defaultValues"></component>
         </el-collapse-item>
-        <el-collapse-item name="2"
+        <!-- <el-collapse-item name="2"
                           title="事件属性"
                           v-if="!['group', 'dynamic'].includes(data.type)">
           <el-form-item label="change">
@@ -124,7 +124,7 @@
                       placeholder="失去焦点事件"
                       rows="5"></el-input>
           </el-form-item>
-        </el-collapse-item>
+        </el-collapse-item> -->
       </el-collapse>
     </el-form>
     <avue-empty v-else

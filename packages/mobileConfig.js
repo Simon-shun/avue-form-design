@@ -16,32 +16,27 @@ export default [
     {
       title: '输入字段',
       list: [
-     
         {
         type: 'input',
         label: '单行文本',
         icon: 'icon-input',
         span: 24,
-        display: true
       }, {
         type: 'password',
         label: '密码',
         icon: 'icon-password',
         span: 24,
-        display: true
       }, {
         type: 'textarea',
         label: '多行文本',
         icon: 'icon-textarea',
         span: 24,
-        display: true
       }, {
         type: 'number',
         label: '数字',
         icon: 'icon-number',
         controls: true,
         span: 24,
-        display: true,
       }]
     },
     {
@@ -56,7 +51,6 @@ export default [
           { label: '选项三', value: '2' },
         ],
         span: 24,
-        display: true,
         dicOption: 'static',
         props: {
           label: 'label',
@@ -73,7 +67,6 @@ export default [
           { label: '选项三', value: '2' },
         ],
         span: 24,
-        display: true,
         dicOption: 'static',
         props: {
           label: 'label',
@@ -91,7 +84,6 @@ export default [
         // 用于做级联配置
         cascaderItem: [],
         span: 24,
-        display: true,
         dicOption: 'static',
         props: {
           label: 'label',
@@ -106,7 +98,6 @@ export default [
         label: '上传',
         icon: 'icon-upload',
         span: 24,
-        display: true,
         showFileList: true,
         multiple: true,
         limit: 10,
@@ -124,7 +115,6 @@ export default [
         label: '日期',
         icon: 'icon-date',
         span: 24,
-        display: true,
         format: 'yyyy-MM-dd',
         valueFormat: 'yyyy-MM-dd'
       }, {
@@ -132,7 +122,6 @@ export default [
         label: '时间',
         icon: 'icon-time',
         span: 24,
-        display: true,
         format: 'HH:mm:ss',
         valueFormat: 'HH:mm:ss'
       }, {
@@ -140,7 +129,6 @@ export default [
         label: '日期时间',
         icon: 'icon-datetime',
         span: 24,
-        display: true,
         format: 'yyyy-MM-dd HH:mm:ss',
         valueFormat: 'yyyy-MM-dd HH:mm:ss'
       }],
@@ -152,7 +140,6 @@ export default [
         label: '开关',
         icon: 'icon-switch',
         span: 24,
-        display: true,
         value: '0',
         dicData: [{ label: '', value: '0' }, { label: '', value: '1' }]
       }, {
@@ -160,7 +147,6 @@ export default [
         label: '评价',
         icon: 'icon-star',
         span: 24,
-        display: true,
         max: 5,
         value: 0,
         texts: ['极差', '失望', '一般', '满意', '惊喜'],
@@ -170,7 +156,6 @@ export default [
         label: '滑块',
         icon: 'icon-slider',
         span: 24,
-        display: true,
         min: 0,
         max: 10
       }]

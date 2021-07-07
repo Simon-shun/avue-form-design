@@ -50,7 +50,7 @@ export default {
       defaultValues: {
         input: [{
           label: '当前操作人部门',
-          value: '${this.$store.getters.userInfo.dept_name}'
+          value: 'dept_name'
         }],
       }
     }

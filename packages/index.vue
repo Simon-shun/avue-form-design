@@ -512,9 +512,8 @@ export default {
         this.transformToAvueOptions(this.widgetForm).then(data => {
           this.widgetFormPreview = data
           this.previewVisible = true
-          // localStorage.getItem("avue-form-data")
           localStorage.setItem("avue-form-data", beautifier(data))
-          console.log("data",beautifier(data));
+          // console.log("data",beautifier(data));
         })
       }
     },

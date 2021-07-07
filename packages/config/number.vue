@@ -20,14 +20,14 @@
                        controls-position="right"
                        placeholder="步长"></el-input-number>
     </el-form-item>
-    <el-form-item label="数值精度">
+    <!-- <el-form-item label="数值精度">
       <el-input-number v-model="data.precision"
                        controls-position="right"
                        placeholder="数值精度"
                        :min="0"
                        :max="10"></el-input-number>
-    </el-form-item>
-    <el-form-item label="开启控制器"
+    </el-form-item> -->
+    <!-- <el-form-item label="开启控制器"
                   label-width="100px">
       <el-switch v-model="data.controls"></el-switch>
     </el-form-item>
@@ -40,7 +40,7 @@
       <el-radio v-model="data.controlsPosition"
                 label="right">右
       </el-radio>
-    </el-form-item>
+    </el-form-item> -->
     <el-form-item label="是否只读">
       <el-switch v-model="data.readonly"></el-switch>
     </el-form-item>
