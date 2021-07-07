@@ -6,7 +6,6 @@ export default [
         label: '选项卡',
         icon: 'icon-group',
         span: 24,
-        display: true,
         arrow: true,
         collapse: true,
         children:{

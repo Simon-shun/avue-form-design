@@ -1,9 +1,15 @@
 <template>
   <div>
     <el-form-item label="图标">
-      <avue-input-icon v-model="data.icon"
-                       :icon-list="iconList"
-                       placeholder="图标"></avue-input-icon>
+      <el-select v-model="data.icon" placeholder="请选择">
+        <el-option
+          v-for="item in list"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value">
+            <span style="float: left"><i :class="item.value"></i></span>
+        </el-option>
+      </el-select>
     </el-form-item>
     <el-form-item label="开启折叠">
       <el-switch v-model="data.arrow"></el-switch>
@@ -12,9 +18,9 @@
                   v-if="data.arrow">
       <el-switch v-model="data.collapse"></el-switch>
     </el-form-item>
-    <el-form-item label="是否可见">
+    <!-- <el-form-item label="是否可见">
       <el-switch v-model="data.display"></el-switch>
-    </el-form-item>
+    </el-form-item> -->
   </div>
 </template>
 <script>
@@ -26,8 +32,9 @@ export default {
     return {
       iconList: [{
         label: 'element-ui',
-        list: ['el-icon-info', 'el-icon-error', 'el-icon-success', 'el-icon-warning', 'el-icon-question']
-      }]
+      }],
+      list: [ {value:'el-icon-info'}, {value:'el-icon-error'}, {value:'el-icon-success'}, {value:'el-icon-warning'}, {value:'el-icon-question'}]
+
     }
   }
 }

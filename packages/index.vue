@@ -273,8 +273,8 @@
               <iframe src="/#/preview"
                     frameborder="0"
                     scrolling="0"
-                    width="375"
-                    height="700"
+                    width="100%"
+                    height="100%"
                     style="margin-left: 10px;"
                     class="preview-iframe"
                     >
