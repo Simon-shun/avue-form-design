@@ -19,28 +19,12 @@ export default {
         }
     },
     mounted(){
-        this.widgetFormPreview =   eval("(" + localStorage.getItem("avue-form-data") + ")") 
-        console.log('widgetFormPreview',this.widgetFormPreview);
-
+        this.widgetFormPreview = eval("(" + localStorage.getItem("avue-form-data") + ")") 
     },
     methods:{
  // 预览 - 弹窗 - 确定
-        handlePreviewSubmit(form, done) {
-        if (done) {
-            this.$alert(this.widgetModels).then(() => {
-            done()
-            }).catch(() => {
-            done()
-            })
-        } else {
-            // this.$refs.form.validate((valid, done) => {
-            // if (valid) this.$alert(this.widgetModels).then(() => {
-            //     done()
-            // }).catch(() => {
-            //     done()
-            // })
-            // })
-        }
+        handlePreviewSubmit() {
+        this.$toast({message:JSON.stringify(this.widgetModels),position: 'top'})
         },
     }
 }

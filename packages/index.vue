@@ -287,12 +287,12 @@
 
         </div>
         <div class="drawer-foot">
-          <el-button size="medium"
+          <!-- <el-button size="medium"
                      type="primary"
                      @click="handlePreviewSubmit">确定</el-button>
           <el-button size="medium"
                      type="danger"
-                     @click="handleBeforeClose">取消</el-button>
+                     @click="handleBeforeClose">取消</el-button> -->
         </div>
       </el-drawer>
     </el-container>

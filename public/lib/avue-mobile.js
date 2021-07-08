@@ -5262,7 +5262,6 @@ var install = function install(Vue) {
     img: /\.(gif|jpg|jpeg|png|GIF|JPG|PNG)/,
     video: /\.(swf|avi|flv|mpg|rm|mov|wav|asf|3gp|mkv|rmvb|ogg|mp4)/
   };
-  console.log("default",_group2.default.name, _group2.default);
   Vue.component(_group2.default.name, _group2.default);
   Vue.prototype.$ImagePreview = (0, _imagePreview2.default)(Vue);
   if (opts.theme === 'dark') {

@@ -4,7 +4,7 @@
              label-suffix="："
              label-width="130px"
              size="small">
-      <el-form-item label="标签对齐方式">
+      <!-- <el-form-item label="标签对齐方式">
         <el-select v-model="data.labelPosition"
                    placeholder="标签对齐方式">
           <el-option label="左对齐"
@@ -14,8 +14,8 @@
           <el-option label="顶部对齐"
                      value="top"></el-option>
         </el-select>
-      </el-form-item>
-      <el-form-item label="标签宽度">
+      </el-form-item> -->
+      <!-- <el-form-item label="标签宽度">
         <el-input-number v-model="data.labelWidth"
                          :min="80"
                          :max="200"
@@ -27,8 +27,8 @@
       <el-form-item label="标签后缀">
         <el-input v-model="data.labelSuffix"
                   placeholder="标签后缀"></el-input>
-      </el-form-item>
-      <el-form-item label="项之间的间隔">
+      </el-form-item> -->
+      <!-- <el-form-item label="项之间的间隔">
         <el-input-number v-model="data.gutter"
                          :min="0"
                          :max="60"
@@ -36,14 +36,14 @@
                          controls-position="right"
                          placeholder="项之间的间隔"
                          style="width: 100%"></el-input-number>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="多分组转标签">
         <el-switch v-model="data.tabs"
                    active-color="#409EFF"></el-switch>
       </el-form-item>
-      <el-form-item label="详情模式">
+      <!-- <el-form-item label="详情模式">
         <el-switch v-model="data.detail"></el-switch>
-      </el-form-item>
+      </el-form-item> -->
       <!-- <el-form-item label="标签样式"
                     v-if="data.tabs">
         <el-select v-model="data.tabsType">
@@ -55,10 +55,10 @@
                      value="border-card"></el-option>
         </el-select>
       </el-form-item> -->
-      <el-form-item label="显示按钮">
+      <!-- <el-form-item label="显示按钮">
         <el-switch v-model="data.menuBtn"
                    active-color="#409EFF"></el-switch>
-      </el-form-item>
+      </el-form-item> -->
       <!-- <el-form-item label="按钮位置"
                     v-if="data.menuBtn">
         <el-select v-model="data.menuPostion"
